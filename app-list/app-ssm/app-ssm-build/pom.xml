@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>app-ssm-base</artifactId>
+        <groupId>win.yulongsun</groupId>
+        <version>0.1-SNAPSHOT</version>
+        <relativePath>../app-ssm-base/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>app-ssm-build</artifactId>
+    <!--pom聚合构建-->
+    <packaging>pom</packaging>
+
+    <name>app-ssm-build</name>
+    <description>app项目的build工程</description>
+
+
+    <!--聚合-->
+    <modules>
+        <module>../app-ssm-base</module>
+        <module>../app-ssm-service</module>
+        <module>../app-ssm-web</module>
+        <module>../app-ssm-data</module>
+        <module>../app-ssm-common</module>
+    </modules>
+
+
+</project>

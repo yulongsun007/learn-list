@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root partner="msdsf"> 
+  <!-- 接口需要转换参数 -->  
+  <!-- 接口需要转换参数  name 为网上交易值；value为快捷通值，根据实际情况配置 -->  
+  <property type="convert" direction="in"> 
+    <column name="sss" describe="5555"> 
+      <appdispatchSet name="hspay" value="6" describe="8888"/>  
+      <appdispatchSet name="szkingdom" value="0" describe=""/>  
+      <appdispatchSet name="eusp" value="0" describe=""/>  
+      <appdispatchSet name="yixinpay" value="0" describe=""/>  
+      <appdispatchSet name="hsroute" value="0" describe=""/>  
+      <appdispatchSet name="xxx" value="sss" describe=""/> 
+    </column>  
+    <column name="appdispatch" describe="分发应用到指定统一支付平台,asdaasdasdasddsfd"> 
+      <appdispatchSet name="hspay" value="6" describe=""/>  
+      <appdispatchSet name="szkingdom" value="0" describe=""/>  
+      <appdispatchSet name="eusp" value="0" describe=""/>  
+      <appdispatchSet name="yixinpay" value="0" describe=""/>  
+      <appdispatchSet name="hsroute" value="0" describe=""/>  
+      <appdispatchSet name="xxx" value="sss" describe=""/> 
+    </column>  
+    <column name="parameter" describe="asdasdasdasdasd"> 
+      <parameterSet name="iscallcs" value="0" describe="是否调用资金系统接口"/>  
+      <parameterSet name="asynccapitalout" value="0" describe="异步单笔划款"/>  
+      <parameterSet name="isCallDsT0" value="0" describe="是否调用直销提供T+0划款状态查询接口"/>  
+      <parameterSet name="mulcapitaloutscan" value="0|1-20|50|1|0| | |0|" describe="多线程(与银行交互)划款轮询"/>  
+      <parameterSet name="refreshCacheTimeout" value="300000" describe="刷新缓存地址超时时间"/>  
+      <parameterSet name="sysScanMode" value="0" describe="订单轮询方式"/>  
+      <parameterSet name="functionno_2A" value="download|1|9003" describe="对账单上asdasdasdzxczxc传"/>  
+      <parameterSet name="functionno_2Q" value="download|1|9004" describe="信用卡还款对账单下载"/>  
+      <parameterSet name="functionno_1Q" value="upload|2|000000560001" describe="文件上传配置"/> 
+    </column>  
+    <column name="refreshUrls" describe="刷新api缓存的地址列表配置"> 
+      <refreshUrlsSet name="A1" value="http://127.0.0.1:7001/openapi/fundbusrestful/comm/refreshcache" describe="刷新api缓存地址"/>  
+      <refreshUrlsSet name="B1" value="http://10.15.68.61/appServer/system/console/refresh.json" describe="刷新appServer缓存地址"/> 
+    </column>  
+    <column name="monitor" describe="监控相关配置"> 
+      <monitorSet name="authreserve" value="" describe="鉴权留痕指令(空:默认关闭,ALL:全部,单一配置：AD|AM|资金方式)"/>  
+      <monitorSet name="asyncreq" value="0" describe="直销异步请求(扣/划款)指令入库"/>  
+      <!-- 监控线程池配置,[min-max|队列大小N] -->  
+      <monitorSet name="threadpool" value="100-120|20000|" describe="监控线程池配置"/> 
+    </column>  
+    <column name="functionmapping" describe="功能映射关系"> 
+      <!-- 信托功能映射关系 -->  
+      <!--functionmappingSet name="ETRUST_01" value="capitalIn" describe="代扣"/>
+                  <functionmappingSet name="ETRUST_02" value="capitalCompDataQuery" describe="对账数据下载"/>
+                  <functionmappingSet name="ETRUST_03" value="signContract" describe="签约解约"/>
+                  <functionmappingSet name="ETRUST_04" value="sendMessage" describe="发送短信接口"/-->  
+      <functionmappingSet name="ETRUST_CMBC" value="CMBCTrust" describe="民生直销银行接口"/>  
+      <functionmappingSet name="ETRUST_CMBC_CAPITALINSCAN" value="CapitalInScan" describe="民生直销银行扣款轮询请求接口"/>  
+      <functionmappingSet name="ETRUST_CMBC_CANCELSCAN" value="CancelScan" describe="民生直销银行撤单轮询请求接口"/>  
+      <!-- 网上交易功能映射关系 -->  
+      <!-- 测试工程和std标准工程功能映射 -->  
+      <functionmappingSet name="ETRUST_TEST" value="eTrustCapitalIn" describe="网上信托标准工程测试功能"/>  
+      <functionmappingSet name="ETS_TEST" value="signContractBuilder" describe="网上交易标准工程测试功能"/>  
+      <functionmappingSet name="OS" value="default" describe="默认"/> 
+    </column>  
+    <column name="cnapsCode" describe="人民银行支付系统行号"> 
+      <cnapsCodeSet name="002" value="102100099996_中国工商银行"/>  
+      <cnapsCodeSet name="003" value="103100000026_中国农业银行股份有限公司"/>  
+      <cnapsCodeSet name="004" value="104100000004_中国银行"/>  
+      <cnapsCodeSet name="005" value="105100000017_中国建设银行股份有限公司总行"/>  
+      <cnapsCodeSet name="006" value="301290000007_交通银行"/>  
+      <cnapsCodeSet name="007" value="308584000013_招商银行股份有限公司"/>  
+      <cnapsCodeSet name="009" value="303100000006_中国光大银行"/>  
+      <cnapsCodeSet name="010" value="310290000013_上海浦东发展银行"/>  
+      <cnapsCodeSet name="011" value="309391000011_兴业银行总行"/>  
+      <cnapsCodeSet name="012" value="304100040000_华夏银行股份有限公司总行"/>  
+      <cnapsCodeSet name="013" value="307584007998_深圳发展银行"/>  
+      <cnapsCodeSet name="014" value="305100000013_中国民生银行"/>  
+      <cnapsCodeSet name="015" value="302100011000_中信银行股份有限公司"/>  
+      <cnapsCodeSet name="016" value="306581000003_广东发展银行股份有限公司运营作业部"/>  
+      <cnapsCodeSet name="017" value="325290000012_上海银行"/>  
+      <cnapsCodeSet name="020" value="313121006888_河北银行股份有限公司"/>  
+      <cnapsCodeSet name="021" value="313127000013_邯郸市商业银行股份有限公司"/>  
+      <cnapsCodeSet name="025" value="313110000017_天津银行股份有限公司"/>  
+      <cnapsCodeSet name="032" value="315456000105_恒丰银行"/>  
+      <cnapsCodeSet name="033" value="314305006665_苏州银行股份有限公司"/>  
+      <cnapsCodeSet name="035" value="313261099913_龙江银行股份有限公司"/>  
+      <cnapsCodeSet name="036" value="313882000012_昆仑银行股份有限公司"/>  
+      <cnapsCodeSet name="037" value="313461000012_济宁银行股份有限公司"/>  
+      <cnapsCodeSet name="045" value="313168000003_晋城市商业银行"/>  
+      <cnapsCodeSet name="047" value="313228000276_营口银行股份有限公司资金清算中心"/>  
+      <cnapsCodeSet name="049" value="313161000017_晋商银行股份有限公司"/>  
+      <cnapsCodeSet name="054" value="313701098010_贵阳市商业银行"/>  
+      <cnapsCodeSet name="059" value="402871099996_宁夏黄河农村商业银行股份有限公司"/>  
+      <cnapsCodeSet name="062" value="313871000007_宁夏银行总行清算中心"/>  
+      <cnapsCodeSet name="063" value="313473200011_日照银行股份有限公司"/>  
+      <cnapsCodeSet name="064" value="313465000010_威海市商业银行"/>  
+      <cnapsCodeSet name="065" value="314305506621_江苏常熟农村商业银行股份有限公司清算中心"/>  
+      <cnapsCodeSet name="071" value="314653000011_重庆农村商业银行股份有限公司"/>  
+      <cnapsCodeSet name="075" value="313393080005_厦门银行股份有限公司"/>  
+      <cnapsCodeSet name="080" value="313455000018_东营市商业银行"/>  
+      <cnapsCodeSet name="081" value="313229000008_阜新银行结算中心"/>  
+      <cnapsCodeSet name="082" value="313611001018_广西北部湾银行"/>  
+      <cnapsCodeSet name="086" value="313227000012_锦州银行"/>  
+      <cnapsCodeSet name="089" value="313492070005_开封市商业银行"/>  
+      <cnapsCodeSet name="093" value="313614000012_柳州银行股份有限公司清算中心"/>  
+      <cnapsCodeSet name="095" value="313659000016_绵阳市商业银行"/>  
+      <cnapsCodeSet name="096" value="313513080408_南阳市商业银行"/>  
+      <cnapsCodeSet name="097" value="313191000011_内蒙古银行"/>  
+      <cnapsCodeSet name="098" value="313656000019_攀枝花市商业银行"/>  
+      <cnapsCodeSet name="103" value="313851000018_青海银行股份有限公司营业部"/>  
+      <cnapsCodeSet name="106" value="313433076801_上饶银行"/>  
+      <cnapsCodeSet name="108" value="313463000993_泰安市商业银行"/>  
+      <cnapsCodeSet name="119" value="313138000019_张家口市商业银行股份有限公司"/>  
+      <cnapsCodeSet name="120" value="313491000232_郑州银行"/>  
+      <cnapsCodeSet name="124" value="313504000010_漯河市商业银行"/>  
+      <cnapsCodeSet name="126" value="313192000013_包商银行股份有限公司"/>  
+      <cnapsCodeSet name="135" value="597100000014_韩亚银行（中国）有限公司"/>  
+      <cnapsCodeSet name="136" value="596110000013_企业银行（中国）有限公司"/>  
+      <cnapsCodeSet name="140" value="595100000007_新韩银行（中国）有限公司"/>  
+      <cnapsCodeSet name="141" value="591110000016_外换银行（中国）有限公司"/>  
+      <cnapsCodeSet name="162" value="313131000016_邢台银行股份有限公司"/>  
+      <cnapsCodeSet name="163" value="313143005157_沧州银行"/>  
+      <cnapsCodeSet name="164" value="313141052422_承德银行股份有限公司"/>  
+      <cnapsCodeSet name="168" value="313205057830_鄂尔多斯银行股份有限公司"/>  
+      <cnapsCodeSet name="174" value="313227600018_葫芦岛银行股份有限公司"/>  
+      <cnapsCodeSet name="175" value="313223007007_鞍山市商业银行"/>  
+      <cnapsCodeSet name="182" value="314305400015_吴江农村商业银行清算中心"/>  
+      <cnapsCodeSet name="194" value="314305206650_昆山农村商业银行"/>  
+      <cnapsCodeSet name="203" value="313336071575_湖州银行股份有限公司"/>  
+      <cnapsCodeSet name="211" value="313428076517_赣州银行股份有限公司"/>  
+      <cnapsCodeSet name="272" value="314588000016_佛山顺德农村商业银行股份有限公司"/>  
+      <cnapsCodeSet name="282" value="313658000014_德阳银行股份有限公司"/>  
+      <cnapsCodeSet name="309" value="402391000068_福建省农村信用社联合社"/>  
+      <cnapsCodeSet name="901" value="313551088886_长沙银行股份有限公司"/>  
+      <cnapsCodeSet name="903" value="322290000011_上海农村商业银行"/>  
+      <cnapsCodeSet name="904" value="313301008887_南京银行股份有限公司"/>  
+      <cnapsCodeSet name="907" value="313333007331_温州银行股份有限公司"/>  
+      <cnapsCodeSet name="909" value="402602000018_东莞农村商业银行股份有限公司"/>  
+      <cnapsCodeSet name="910" value="314581000011_广州农村商业银行股份有限公司"/>  
+      <cnapsCodeSet name="911" value="313331000014_杭州银行股份有限公司"/>  
+      <cnapsCodeSet name="913" value="402332010004_宁波鄞州农村合作银行"/>  
+      <cnapsCodeSet name="915" value="316331000018_浙商银行"/>  
+      <cnapsCodeSet name="916" value="313456000108_烟台银行股份有限公司"/>  
+      <cnapsCodeSet name="918" value="313468000015_德州银行股份有限公司"/>  
+      <cnapsCodeSet name="919" value="313731010015_富滇银行股份有限公司运营管理部"/>  
+      <cnapsCodeSet name="920" value="307584007998_平安银行"/>  
+      <cnapsCodeSet name="921" value="313332082914_宁波银行股份有限公司"/>  
+      <cnapsCodeSet name="922" value="313100000013_北京银行"/>  
+      <cnapsCodeSet name="923" value="319361000013_徽商银行股份有限公司"/>  
+      <cnapsCodeSet name="925" value="313391080007_福建海峡银行股份有限公司"/>  
+      <cnapsCodeSet name="926" value="313421087506_南昌银行"/>  
+      <cnapsCodeSet name="934" value="403100000004_中国邮政储蓄银行有限责任公司"/>  
+      <cnapsCodeSet name="938" value="318110000014_渤海银行股份有限公司"/>  
+      <cnapsCodeSet name="939" value="402584009991_深圳农村商业银行"/>  
+      <cnapsCodeSet name="940" value="313653000013_重庆银行"/>  
+      <cnapsCodeSet name="941" value="313222080002_大连银行"/>  
+      <cnapsCodeSet name="942" value="313261000018_哈尔滨银行结算中心"/>  
+      <cnapsCodeSet name="943" value="313301099999_江苏银行股份有限公司"/>  
+      <cnapsCodeSet name="944" value="313493080539_洛阳银行"/>  
+      <cnapsCodeSet name="945" value="313453001017_齐商银行"/>  
+      <cnapsCodeSet name="946" value="313452060150_青岛银行"/>  
+      <cnapsCodeSet name="947" value="402100000018_北京农村商业银行股份有限公司"/>  
+      <cnapsCodeSet name="948" value="313881000002_乌鲁木齐市商业银行清算中心"/>  
+      <cnapsCodeSet name="949" value="313521000011_汉口银行资金清算中心"/>  
+      <cnapsCodeSet name="950" value="313602088017_东莞银行股份有限公司"/>  
+      <cnapsCodeSet name="951" value="313338707013_浙江稠州商业银行"/>  
+      <cnapsCodeSet name="952" value="313345400010_浙江民泰商业银行"/>  
+      <cnapsCodeSet name="953" value="313473070018_临商银行股份有限公司"/>  
+      <cnapsCodeSet name="954" value="314305670002_张家港农村商业银行"/>  
+      <cnapsCodeSet name="959" value="313337009004_绍兴银行股份有限公司营业部"/>  
+      <cnapsCodeSet name="960" value="313345001665_台州银行股份有限公司"/>  
+      <cnapsCodeSet name="961" value="313345010019_浙江泰隆商业银行"/>  
+      <cnapsCodeSet name="962" value="313581003284_广州银行"/>  
+      <cnapsCodeSet name="966" value="313821001016_兰州银行股份有限公司"/>  
+      <cnapsCodeSet name="969" value="313463400019_莱商银行"/>  
+      <cnapsCodeSet name="970" value="313241066661_吉林银行"/>  
+      <cnapsCodeSet name="974" value="317110010019_天津农村合作银行"/>  
+      <!--
+                  <cnapsCodeSet name="817" value="402301099998_江苏省农村信用社联合社信息结算中心"/>
+                  <cnapsCodeSet name="818" value="302361018886_安徽省农村信用联社资金清算中心"/>
+                  <cnapsCodeSet name="820" value="402521000032_湖北省农村信用社联合社结算中心"/>
+                  <cnapsCodeSet name="822" value="402611099974_广西壮族自治区农村信用社联合社"/>
+                  <cnapsCodeSet name="823" value="402641000014_海南省农村信用社联合社资金清算中心"/>
+                  <cnapsCodeSet name="824" value="402731057238_云南省农村信用社联合社"/>
+                  <cnapsCodeSet name="831" value="313506082510_商丘市商业银行股份有限公司"/>
+                  --> 
+    </column>  
+    <column name="splitParam" describe="分流参数"> 
+      <splitParamSet name="appnum" value="" describe="通讯机部署台数,默认为空"/>  
+      <splitParamSet name="remaindernum" value="0" describe="通过此通讯机的流水号,可配置多个数字，以‘,’分割"/> 
+    </column>  
+    <column name="identitytype" describe="证件类型"> 
+      <!--快捷通证件类型:0：暂住证1：身份证2：户口本3：军官证 4：警官证 5：士兵证  6：文职干部证 7：护照 8：港澳台同胞回乡证 -->  
+      <identitytypeSet name="0" value="ZR01" describe="身份证"/>  
+      <identitytypeSet name="1" value="ZR21" describe="护照"/>  
+      <identitytypeSet name="2" value="ZR04" describe="军官证"/>  
+      <identitytypeSet name="3" value="ZR06" describe="士兵证"/>  
+      <identitytypeSet name="4" value="ZR09" describe="港澳通行证"/>  
+      <identitytypeSet name="5" value="ZR03" describe="户口本"/>  
+      <!--<identitytypeSet name="6" value="7" describe="外国护照"/>-->  
+      <!--<identitytypeSet name="7" value="" describe="其他"/>-->  
+      <identitytypeSet name="8" value="ZR07" describe="文职"/>  
+      <identitytypeSet name="9" value="ZR05" describe="警官"/>  
+      <!--<identitytypeSet name="A" value="" describe="台胞证"/>--> 
+    </column>  
+    <column name="capitalOutbusinflag" describe="基金交易类型"> 
+      <!--扣款：基金交易类型:3060赎回、3040分红、3050退款、没有配置默认为3050-->  
+      <capitalOutbusinflagSet name="124" value="3060"/>  
+      <capitalOutbusinflagSet name="024" value="3060"/>  
+      <capitalOutbusinflagSet name="235" value="3060"/>  
+      <capitalOutbusinflagSet name="142" value="3060"/>  
+      <capitalOutbusinflagSet name="195" value="3060"/>  
+      <capitalOutbusinflagSet name="143" value="3040"/> 
+    </column>  
+    <column name="bankinscode" describe="银联机构编号"> 
+      <!--直销1014银行编号转换为银联机构编号-->  
+      <bankinscodeSet name="002" value="01020000" describe="工商银行"/>  
+      <bankinscodeSet name="003" value="01030000" describe="农业银行"/>  
+      <bankinscodeSet name="005" value="01050000" describe="建设银行"/>  
+      <bankinscodeSet name="004" value="01040000" describe="中国银行"/>  
+      <bankinscodeSet name="934" value="01000000" describe="邮储银行"/>  
+      <bankinscodeSet name="007" value="03080000" describe="招商银行"/>  
+      <bankinscodeSet name="009" value="03030000" describe="光大银行"/>  
+      <bankinscodeSet name="016" value="03060000" describe="广发银行"/>  
+      <bankinscodeSet name="012" value="03040000" describe="华夏银行"/>  
+      <bankinscodeSet name="011" value="03090000" describe="兴业银行"/>  
+      <bankinscodeSet name="015" value="03020000" describe="中信银行"/>  
+      <bankinscodeSet name="920" value="03070000" describe="平安银行"/>  
+      <bankinscodeSet name="006" value="03010000" describe="交通银行"/>  
+      <bankinscodeSet name="010" value="03100000" describe="浦发银行"/>  
+      <bankinscodeSet name="966" value="04470000" describe="兰州银行"/> 
+    </column>  
+    <column name="businflag" describe="业务类型用途说明"> 
+      <!--业务类型用途说明配置-->  
+      <businflagSet name="020" value="认购"/>  
+      <businflagSet name="021" value="预约认购"/>  
+      <businflagSet name="022" value="申购"/>  
+      <businflagSet name="023" value="预约申购"/>  
+      <businflagSet name="024" value="赎回"/>  
+      <businflagSet name="025" value="预约赎回"/>  
+      <businflagSet name="039" value="定期定额申购"/>  
+      <businflagSet name="053" value="撤销申请"/>  
+      <businflagSet name="095" value="定期定额赎回"/>  
+      <businflagSet name="098" value="快速过户"/>  
+      <businflagSet name="120" value="认购行为确认"/>  
+      <businflagSet name="122" value="申购确认"/>  
+      <businflagSet name="124" value="赎回确认"/>  
+      <businflagSet name="139" value="定期定额申购确认"/>  
+      <businflagSet name="142" value="强制赎回"/>  
+      <businflagSet name="143" value="红利发放"/>  
+      <businflagSet name="153" value="撤销申请确认"/>  
+      <businflagSet name="195" value="定期定额赎回确认"/>  
+      <businflagSet name="235" value="快速过户出"/> 
+    </column> 
+  </property>  
+  <property type="increase" direction="in"> 
+    <!-- 公用字段 -->  
+    <!-- 由于直销的HS_QUERY与HS_TRANSACTION接口对于同一字段名称定义不一致,为便于程序实现参数自动注入,此处对于非同名字段的公共字段定义两份,修改时请同时变更 -->  
+    <!-- HS_TRANSACTION公共字段的定义 -->  
+    <column name="operatorno" value="0088" describe="操作员"/>  
+    <column name="trust" value="2" describe="委托方式"/>  
+    <column name="netno" value="8881" describe="网点代码"/>  
+    <column name="tacode" value="25" describe="TA代码"/>  
+    <column name="requestnum" value="10" describe="申请记录数"/>  
+    <!-- HS_QUERY公共字段的定义  -->  
+    <column name="operator" value="0088" describe="操作员"/>  
+    <column name="trademode" value="2" describe="委托方式"/>  
+    <column name="pageSize" value="10" describe="申请记录数"/>  
+    <column name="autoretranswhenfailed" value="0" describe="T+0拆笔划款失败的流水是否自动重划"/> 
+  </property>  
+  <property type="increase222" direction="in222"> 
+    <column name="operatorno" value="0088" describe="操作xxxx员"/>  
+    <column name="trust" value="2" describe="委托方式"/> 
+  </property> 
+</root>
