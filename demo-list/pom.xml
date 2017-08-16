@@ -16,5 +16,6 @@
     <modules>
         <module>demo-all</module>
         <module>demo-dubbo</module>
+        <module>demo-sb</module>
     </modules>
 </project>
