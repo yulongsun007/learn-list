@@ -1,0 +1,11 @@
+application: demo-sb
+server:
+  port: 8081
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: demo-sb
+logging:
+  file: ./demo-sb.log
