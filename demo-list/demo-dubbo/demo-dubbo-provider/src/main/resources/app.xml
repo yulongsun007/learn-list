@@ -8,7 +8,7 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd ">
 
 
-    <bean id="testService" class="win.yulongsun.service.impl.TestServiceImpl"/>
+    <!--<bean id="testService" class="win.yulongsun.demo.dubbo.impl.TestServiceImpl"/>-->
 
     <!--提供方应用信息-->
     <dubbo:application name="provider"/>
@@ -20,6 +20,9 @@
     <dubbo:protocol name="dubbo" port="20880"/>
 
     <!--声明要暴露的服务接口-->
-    <dubbo:service interface="win.yulongsun.service.TestService" ref="testService"/>
+    <dubbo:service interface="win.yulongsun.demo.dubbo.TestService" ref="testService"/>
+
+    <!--扫描注解包路径-->
+    <dubbo:annotation package="win.yulongsun.demo.dubbo"/>
 
 </beans>

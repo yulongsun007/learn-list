@@ -1,6 +1,7 @@
-package win.yulongsun.service;
+package win.yulongsun.demo.sb.service;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import win.yulongsun.demo.dubbo.TestService;
 
 import java.io.IOException;
 

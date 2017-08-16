@@ -1,4 +1,4 @@
-package win.yulongsun.service;
+package win.yulongsun.demo.dubbo;
 
 /**
  * @author sunyulong on 2016/12/29.
