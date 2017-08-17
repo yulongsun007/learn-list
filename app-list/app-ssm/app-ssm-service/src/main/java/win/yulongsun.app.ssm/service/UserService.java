@@ -1,4 +1,4 @@
-package win.yulongsun.service;
+package win.yulongsun.demo.sb.service;
 
 import win.yulongsun.bo.param.UserBOParam;
 import win.yulongsun.bo.result.UserBOResult;

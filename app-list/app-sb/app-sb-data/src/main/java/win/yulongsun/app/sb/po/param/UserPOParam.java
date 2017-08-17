@@ -1,4 +1,4 @@
-package win.yulongsun.po.param;
+package win.yulongsun.app.sb.po.param;
 
 /**
  * @author sunyulong on 2017/1/10.

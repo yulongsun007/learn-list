@@ -1,7 +1,7 @@
-package win.yulongsun.dao;
+package win.yulongsun.app.sb.dao;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import win.yulongsun.po.data.UserPO;
+import win.yulongsun.app.sb.po.data.UserPO;
 
 /**
  * Created by sunyl21830 on 2017/7/12.

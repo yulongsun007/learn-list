@@ -1,4 +1,4 @@
-package win.yulongsun.common;
+package win.yulongsun.app.sb.common;
 
 import java.io.Serializable;
 

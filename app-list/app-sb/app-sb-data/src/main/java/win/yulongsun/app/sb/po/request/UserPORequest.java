@@ -1,25 +1,22 @@
-package win.yulongsun.po.data;
+package win.yulongsun.app.sb.po.request;
 
-import java.util.Date;
+import win.yulongsun.app.sb.common.CommonRequest;
 
 /**
  * @author sunyulong on 2017/1/10.
  */
-public class UserPO {
+public class UserPORequest extends CommonRequest {
 
     private Integer id;
+
+    private String name;
 
     private String account;
 
     private String password;
 
-    private String name;
-
     private String mobile;
 
-    private Date createAt;
-
-    private Date updateAt;
 
     public Integer getId() {
         return id;
@@ -59,21 +56,5 @@ public class UserPO {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
-    }
-
-    public Date getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(Date createAt) {
-        this.createAt = createAt;
-    }
-
-    public Date getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(Date updateAt) {
-        this.updateAt = updateAt;
     }
 }

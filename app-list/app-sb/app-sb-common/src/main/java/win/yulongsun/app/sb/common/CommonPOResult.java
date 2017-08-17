@@ -1,6 +1,6 @@
-package win.yulongsun.common;
+package win.yulongsun.app.sb.common;
 
-import win.yulongsun.constant.ResultConstant;
+import win.yulongsun.app.sb.constant.ResultConstant;
 
 import java.io.Serializable;
 import java.util.ArrayList;

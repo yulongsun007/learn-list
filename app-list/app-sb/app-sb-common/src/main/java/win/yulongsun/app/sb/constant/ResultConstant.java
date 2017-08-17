@@ -1,4 +1,4 @@
-package win.yulongsun.constant;
+package win.yulongsun.app.sb.constant;
 
 /**
  * 封装了和Result相关的常量
