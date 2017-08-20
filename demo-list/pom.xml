@@ -6,7 +6,7 @@
 
     <groupId>win.yulongsun</groupId>
     <artifactId>demo-list</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
@@ -17,5 +17,6 @@
         <module>demo-all</module>
         <module>demo-dubbo</module>
         <module>demo-sb</module>
+        <module>demo-sb-dubbo</module>
     </modules>
 </project>

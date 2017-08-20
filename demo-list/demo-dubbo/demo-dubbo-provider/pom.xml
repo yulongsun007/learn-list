@@ -4,10 +4,15 @@
     <groupId>win.yulongsun</groupId>
     <artifactId>demo-dubbo-provider</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>demo-dubbo-provider</name>
 
     <description>服务提供者</description>
+
+    <properties>
+        <spring.version>4.0.5.RELEASE</spring.version>
+    </properties>
+
 
     <dependencies>
         <dependency>
@@ -16,6 +21,8 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+
+        <!--dubbo -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
@@ -27,11 +34,14 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--zookeeper-->
         <dependency>
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
             <version>0.1</version>
         </dependency>
+
         <!-- spring相关 -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -94,9 +104,7 @@
             <version>${spring.version}</version>
         </dependency>
     </dependencies>
-    <properties>
-        <spring.version>4.0.5.RELEASE</spring.version>
-    </properties>
+
     <build>
         <finalName>demo-dubbo-provider</finalName>
     </build>

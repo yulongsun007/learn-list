@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <name>demo-dubbo</name>
-    <description>dubbo学习案例</description>
+    <description>Demo project for Dubbo</description>
 
     <modules>
         <module>demo-dubbo-provider</module>

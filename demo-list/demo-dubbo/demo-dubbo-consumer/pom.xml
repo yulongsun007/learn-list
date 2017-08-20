@@ -4,7 +4,7 @@
     <groupId>win.yulongsun</groupId>
     <artifactId>demo-dubbo-consumer</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>demo-dubbo-consumer</name>
 
     <properties>
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>win.yulongsun</groupId>
             <artifactId>demo-dubbo-provider</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!-- 添加dubbo依赖 -->
         <dependency>
