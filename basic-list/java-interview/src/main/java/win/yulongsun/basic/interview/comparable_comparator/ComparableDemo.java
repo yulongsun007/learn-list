@@ -1,4 +1,4 @@
-package Comparable和Comparator的区别;
+package win.yulongsun.basic.interview.comparable_comparator;
 
 import java.util.Comparator;
 

@@ -1,4 +1,4 @@
-package main.java._03同步器;
+package win.yulongsun.basic.interview.juc.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
 

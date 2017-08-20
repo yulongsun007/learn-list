@@ -1,4 +1,4 @@
-package _2016.懂二进制;
+package win.yulongsun.basic.interview.arithmetic.懂二进制;
 
 /**
  * 世界上有10种人，一种懂二进制，一种不懂。那么你知道两个int32整数m和n的二进制表达，有多少个位(bit)不同么？

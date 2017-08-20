@@ -6,12 +6,12 @@
 
     <groupId>win.yulongsun</groupId>
     <artifactId>basic-list</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1 -SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
-    <name>demo-list</name>
-    <description>存放基础知识</description>
+    <name>basic-list</name>
+    <description>Basic project for java basic </description>
 
     <modules>
         <module>java-book</module>

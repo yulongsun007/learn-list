@@ -1,4 +1,4 @@
-package _02重排序;
+package win.yulongsun.basic.interview.arithmetic.重排序;
 
 /**
  * @author by sunyulong on 2017/1/第五部分.
