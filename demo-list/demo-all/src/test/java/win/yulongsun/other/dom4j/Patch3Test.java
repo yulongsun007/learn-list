@@ -1,10 +1,9 @@
 package win.yulongsun.other.dom4j;
 
 import org.junit.Test;
+import win.yulongsun.demo.all.basic.reflect.dom4j.Patch3;
 
 import java.util.ArrayList;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by sunyl21830 on 2017/7/13.

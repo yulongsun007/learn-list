@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root partner="msdsf"> 
+  <!-- 接口需要转换参数 -->  
+  <!-- 接口需要转换参数  name 为网上交易值；value为快捷通值，根据实际情况配置 -->  
+  <property type="convert" direction="in"> 
+    <column name="parameter" describe="证件类型"> 
+      <parameterSet name="functionno_2A" value="download|1|9003" describe="对账单上传"/>  
+      <parameterSet name="functionno_2Q" value="download|1|9004" describe="信用卡还款对账单下载"/>  
+      <parameterSet name="functionno_1Q" value="upload|2|000000560001" describe="文件上传配置"/> 
+    </column>  
+    <column name="identitytype" describe="证件类型xxxxx"> 
+      <!--快捷通证件类型:0：暂住证1：身份证2：户口本3：军官证 4：警官证 5：士兵证  6：文职干部证 7：护照 8：港澳台同胞回乡证 -->  
+      <identitytypeSet name="0" value="7777" describe="j"/>  
+      <identitytypeSet name="1" value="88888" describe="h"/>  
+      <identitytypeSet name="2" value="ZR04" describe="j"/>  
+      <identitytypeSet name="3" value="ZR06" describe="士兵证"/>  
+      <identitytypeSet name="4" value="ZR09" describe="ssssss"/>  
+      <identitytypeSet name="5" value="ZR03" describe="户口本"/>  
+      <!--<identitytypeSet name="6" value="7" describe="外国护照"/>-->  
+      <!--<identitytypeSet name="7" value="" describe="其他"/>-->  
+      <identitytypeSet name="8" value="ZR07" describe="文职"/>  
+      <identitytypeSet name="9" value="ZR05" describe="警官"/>  
+      <!--<identitytypeSet name="A" value="" describe="台胞证"/>--> 
+    </column>  
+    <column name="capitalOutbusinflag" describe="基金交易类型"> 
+      <!--扣款：基金交易类型:3060赎回、3040分红、3050退款、没有配置默认为3050-->  
+      <capitalOutbusinflagSet name="124" value="3060"/>  
+      <capitalOutbusinflagSet name="024" value="3060"/>  
+      <capitalOutbusinflagSet name="235" value="3060"/>  
+      <capitalOutbusinflagSet name="142" value="3060"/>  
+      <capitalOutbusinflagSet name="195" value="3060"/>  
+      <capitalOutbusinflagSet name="143" value="3040"/> 
+    </column>  
+    <column name="bankinscode" describe="银联机构编号"> 
+      <!--直销1014银行编号转换为银联机构编号-->  
+      <bankinscodeSet name="002" value="01020000" describe="工商银行"/>  
+      <bankinscodeSet name="003" value="01030000" describe="农业银行"/>  
+      <bankinscodeSet name="005" value="01050000" describe="建设银行"/>  
+      <bankinscodeSet name="004" value="01040000" describe="中国66666银行"/>  
+      <bankinscodeSet name="934" value="01000000" describe="邮储银行"/>  
+      <bankinscodeSet name="007" value="03080000" describe="招商银行"/>  
+      <bankinscodeSet name="009" value="03030000" describe="光大银行"/>  
+      <bankinscodeSet name="016" value="03060000" describe="广发银行"/>  
+      <bankinscodeSet name="012" value="03040000" describe="华夏银行"/>  
+      <bankinscodeSet name="011" value="03090000" describe="兴业银行"/>  
+      <bankinscodeSet name="015" value="03020000" describe="中信银行"/>  
+      <bankinscodeSet name="920" value="03070000" describe="平安银行"/>  
+      <bankinscodeSet name="006" value="03010000" describe="交通银行"/>  
+      <bankinscodeSet name="010" value="03100000" describe="浦发银行"/>  
+      <bankinscodeSet name="966" value="04470000" describe="兰州银行"/> 
+    </column>  
+    <column name="businflag" describe="业务类型用途说明"> 
+      <!--业务类型用途说明配置-->  
+      <businflagSet name="020" value="认购"/>  
+      <businflagSet name="021" value="预约认购"/>  
+      <businflagSet name="022" value="申购"/>  
+      <businflagSet name="023" value="预约申购"/>  
+      <businflagSet name="024" value="赎回"/>  
+      <businflagSet name="025" value="预约赎回"/>  
+      <businflagSet name="039" value="定期定额申购"/>  
+      <businflagSet name="053" value="撤销申请"/>  
+      <businflagSet name="095" value="定期定额赎回"/>  
+      <businflagSet name="098" value="快速过户"/>  
+      <businflagSet name="120" value="认购行为确认"/>  
+      <businflagSet name="122" value="申购确认"/>  
+      <businflagSet name="124" value="赎回确认"/>  
+      <businflagSet name="139" value="定期定额申购确认"/>  
+      <businflagSet name="142" value="强制赎回"/>  
+      <businflagSet name="143" value="红利发放"/>  
+      <businflagSet name="153" value="撤销申请确认"/>  
+      <businflagSet name="195" value="定期定额赎回确认"/>  
+      <businflagSet name="235" value="快速过户出"/>  
+      <!--<businflagSet name="195" value="定期定额赎回确认"/>  -->  
+      <!--<businflagSet name="235" value="快速过户出"/> --> 
+    </column>  
+    <column name="020" describe="业务类型用途说明"> 
+      <!--业务类型用途说明配置-->  
+      <businflagSet name="020" value="认购"/>  
+      <businflagSet name="124" value="赎回确认"/>  
+      <businflagSet name="139" value="定期定额申购确认"/>  
+      <businflagSet name="142" value="强制赎回"/>  
+      <businflagSet name="143" value="红利发放"/>  
+      <businflagSet name="153" value="撤销申请确认"/>  
+      <businflagSet name="195" value="定期定额赎回确认"/>  
+      <businflagSet name="235" value="快速过户出"/> 
+    </column>  
+    <column name="010" describe="业务类型用途说明"> 
+      <!--业务类型用途说明配置-->  
+      <businflagSet name="020" value="认购"/>  
+      <businflagSet name="124" value="赎回确认"/>  
+      <businflagSet name="139" value="定期定额申购确认"/>  
+      <businflagSet name="142" value="强制赎回"/>  
+      <businflagSet name="143" value="红利发放"/>  
+      <businflagSet name="153" value="撤销申请确认"/>  
+      <businflagSet name="195" value="定期定额赎回确认"/>  
+      <businflagSet name="235" value="快速过户出"/> 
+    </column>
+    <column name="55555" describe="业务类型用途说明"> 
+      <!--业务类型用途说明配置-->  
+      <businflagSet name="020" value="认购"/>  
+      <businflagSet name="124" value="赎回确认"/>  
+      <businflagSet name="139" value="定期定额申购确认"/>  
+      <businflagSet name="142" value="强制赎回"/>  
+      <businflagSet name="143" value="红利发放"/>  
+      <businflagSet name="153" value="撤销申请确认"/>  
+      <businflagSet name="195" value="定期定额赎回确认"/>  
+      <businflagSet name="235" value="快速过户出"/> 
+    </column> 
+  </property> 
+</root>
