@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: microservice-provider-user # name ：注册到EurekaServer的应用名
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+instance:
+  prefer-ip-address: true  # 表示将自己的IP注册到EurekaServer上,默认为false
