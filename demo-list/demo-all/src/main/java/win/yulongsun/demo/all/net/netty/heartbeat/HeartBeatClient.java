@@ -28,7 +28,7 @@ public class HeartBeatClient {
                     protected void initChannel(SocketChannel ch) throws Exception {
                         ch.pipeline().addLast(new NettyMessageDecoder(1024 * 1024, 4, 4));
                         ch.pipeline().addLast("MessageEncoder", new NettyMessageEncoder());
-                        ch.pipeline().addLast("readTimeoutHandler", new ReadTimeoutHandler(50));
+                        ch.pipeline().addLast("ReadTimeoutHandler", new ReadTimeoutHandler(50));
                         ch.pipeline().addLast("LoginAuthHandler", new LoginAuthReqHandler());
                         ch.pipeline().addLast("HeartBeatHandler", new HeartBeatReqHandler());
                     }
@@ -36,6 +36,7 @@ public class HeartBeatClient {
 
         try {
             ChannelFuture future = bootstrap.connect(new InetSocketAddress(HeartBeatConstant.REMOTE_IP, HeartBeatConstant.REMOTE_PORT)).sync();
+//            future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
