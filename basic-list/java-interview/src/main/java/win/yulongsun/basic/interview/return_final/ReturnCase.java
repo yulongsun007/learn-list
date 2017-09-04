@@ -11,8 +11,10 @@ public class ReturnCase {
     private static String test() {
         try {
             return "A";
-        }finally {
+        } catch (Exception e) {
             return "B";
+        } finally {
+            return "C";
         }
     }
 }
