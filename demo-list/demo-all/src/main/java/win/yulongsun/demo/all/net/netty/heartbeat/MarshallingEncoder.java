@@ -15,7 +15,7 @@ public class MarshallingEncoder {
     Marshaller marshaller;
 
     public MarshallingEncoder(Marshaller marshaller) {
-        this.marshaller = MarshallingCodecFactory.buildMarshalling();
+//        this.marshaller = MarshallingCodecFactory.buildMarshalling();
     }
 
     protected void encode(Object msg, ByteBuf out) {
