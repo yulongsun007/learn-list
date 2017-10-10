@@ -4,12 +4,23 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 /**
  * @author Sun.YuLong on 2017/10/8.
  */
 public class StreamsAPICase {
+    //预留集合，方便测试
+    List<Employee> emps = Arrays.asList(
+            new Employee(102, "李四", 59, 6666.66),
+            new Employee(101, "张三", 18, 9999.99),
+            new Employee(103, "王五", 28, 3333.33),
+            new Employee(104, "赵五", 8, 7777.77),
+            new Employee(104, "赵六", 8, 7777.77),
+            new Employee(104, "赵六", 8, 7777.77),
+            new Employee(105, "田七", 38, 5555.55)
+    );
 
     //创建Stream
     @Test
@@ -33,5 +44,41 @@ public class StreamsAPICase {
         //4.2 生成
         Stream<Double> stream3 = Stream.generate(() -> Math.random() * 100);
         stream3.forEach(System.out::println);
+    }
+
+    //map(Function f): 接收一个函数作为一个参数。该函数会被应用到每一个元素上，将其映射为一个新的元素
+    @Test
+    public void testMap() {
+        emps.stream().map(Employee::getName).forEach(System.out::println);
+    }
+
+    @Test
+    public void testMap2() {
+        List<String> list = Arrays.asList("a", "b", "c", "d");
+        list.stream().map(String::toUpperCase).forEach(System.out::println);
+    }
+
+    //FlatMap
+    @Test
+    public void testFlatMap() {
+
+    }
+
+
+    //Distinct()
+    @Test
+    public void testDistinct() {
+        emps.stream().distinct().forEach(System.out::println);
+    }
+
+    //Sorted
+    @Test
+    public void testSorted() {
+        emps.stream().map(Employee::getAge).sorted().forEach(System.out::println);
+        //
+        System.out.println("---------------------");
+        //
+        emps.stream().sorted((x, y) -> Integer.compare(y.age, x.age)).map(Employee::getAge).forEach(System.out::println);//倒叙
+
     }
 }

@@ -3,6 +3,7 @@ package win.yulongsun.demo.all.basic.java8;
 import org.junit.Test;
 
 import java.io.PrintStream;
+import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -88,5 +89,31 @@ class Employee {
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id &&
+                age == employee.age &&
+                Double.compare(employee.salary, salary) == 0 &&
+                Objects.equals(name, employee.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, age, salary);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
     }
 }
