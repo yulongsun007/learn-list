@@ -1,4 +1,4 @@
-package win.yulongsun.demo.all.basic.java8;
+package win.yulongsun.demo.all.basic.java8.FunctionalInterface;
 
 import org.junit.Test;
 
@@ -28,8 +28,3 @@ public class MyFunctionalInterfaceCase {
     }
 }
 
-// 函数式接口声明@FunctionalInterface
-@FunctionalInterface
-interface MyFunctionalInterface<T,R> {
-    R getValue(T t);
-}

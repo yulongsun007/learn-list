@@ -1,4 +1,4 @@
-package win.yulongsun.demo.all.basic.java8;
+package win.yulongsun.demo.all.basic.java8.FunctionalInterface;
 
 import org.junit.Test;
 
@@ -15,7 +15,7 @@ import java.util.function.Supplier;
  *
  * @author Sun.YuLong on 2017/10/9.
  */
-public class Embed4FunctionalInterface {
+public class Embed4FunctionalInterfaceCase {
 
     //1.测试消费型接口
     @Test

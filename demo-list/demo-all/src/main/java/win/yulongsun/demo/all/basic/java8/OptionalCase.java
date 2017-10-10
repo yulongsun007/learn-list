@@ -31,7 +31,7 @@ public class OptionalCase {
         System.out.println(optional.get()); //java.util.NoSuchElementException: No value present
     }
 
-    //3.
+    //3.Optional.ofNullable(..)
     @Test
     public void test3(){
         Optional<String> optional = Optional.ofNullable(new String());
