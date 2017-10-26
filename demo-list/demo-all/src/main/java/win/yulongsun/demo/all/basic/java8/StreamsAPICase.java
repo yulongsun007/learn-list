@@ -1,6 +1,7 @@
 package win.yulongsun.demo.all.basic.java8;
 
 import org.junit.Test;
+import win.yulongsun.demo.all.basic.java8.reference.Employee;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -78,7 +79,7 @@ public class StreamsAPICase {
         //
         System.out.println("---------------------");
         //
-        emps.stream().sorted((x, y) -> Integer.compare(y.age, x.age)).map(Employee::getAge).forEach(System.out::println);//倒叙
+        emps.stream().sorted((x, y) -> Integer.compare(y.getId(), x.getAge())).map(Employee::getAge).forEach(System.out::println);//倒叙
 
     }
 }

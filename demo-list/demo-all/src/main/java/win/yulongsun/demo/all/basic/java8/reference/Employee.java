@@ -2,7 +2,7 @@ package win.yulongsun.demo.all.basic.java8.reference;
 
 import java.util.Objects;
 
-class Employee {
+public class Employee {
     int    id;
     String name;
     int    age;
