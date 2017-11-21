@@ -1,7 +1,6 @@
 package win.yulongsun.demo.all.net.netty3.example;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
-import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.*;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.jboss.netty.handler.codec.string.StringDecoder;
@@ -12,7 +11,7 @@ import java.net.InetSocketAddress;
 /**
  * @author Sun.YuLong on 2017/10/30.
  */
-public class SimpleServer {
+public class SimpleNetty3Server {
     public static void main(String[] args) {
         ServerBootstrap serverBootstrap = new ServerBootstrap();
         serverBootstrap.setFactory(new NioServerSocketChannelFactory());
@@ -22,7 +21,7 @@ public class SimpleServer {
                 ChannelPipeline pipeline = Channels.pipeline();
                 pipeline.addLast("decoder", new StringDecoder());
                 pipeline.addLast("encoder", new StringEncoder());
-                pipeline.addLast("simpleHandler", new SimpleHandler());
+                pipeline.addLast("myServerHandler", new MyServerHandler());
                 return pipeline;
             }
         });
@@ -31,12 +30,15 @@ public class SimpleServer {
 
     }
 }
+
 //
-class SimpleHandler extends SimpleChannelHandler {
+class MyServerHandler extends SimpleChannelHandler {
 
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
         System.out.println("messageReceived");
+        String message = (String) e.getMessage();
+        System.out.println(message);
         super.messageReceived(ctx, e);
     }
 
