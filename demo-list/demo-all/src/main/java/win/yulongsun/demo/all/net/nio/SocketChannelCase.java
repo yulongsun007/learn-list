@@ -28,7 +28,7 @@ public class SocketChannelCase {
         try {
             // 打开SocketChannel
             SocketChannel socketChannel = SocketChannel.open();
-            socketChannel.connect(new InetSocketAddress("http://jenkov.com", 80));
+            socketChannel.connect(new InetSocketAddress(9999));
 
             //从SocketChannel读取数据
             ByteBuffer buf = ByteBuffer.allocate(48);

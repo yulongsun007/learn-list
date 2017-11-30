@@ -14,6 +14,7 @@
     <description>Demo for Spring Cloud</description>
 
     <modules>
+        <module>microservice-demo-template</module>
         <module>microservice-discovery-eureka</module>
         <module>microservice-discovery-eureka-ha</module>
         <module>microservice-pro-user-movie</module>

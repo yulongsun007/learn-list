@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+import win.yulongsun.demo.all.basic.java8.reference.Employee;
+
 /**
  * @author Sun.YuLong on 2017/10/8.
  */

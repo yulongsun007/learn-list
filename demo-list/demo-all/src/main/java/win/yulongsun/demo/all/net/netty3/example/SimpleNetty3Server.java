@@ -3,6 +3,8 @@ package win.yulongsun.demo.all.net.netty3.example;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.*;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
+import org.jboss.netty.handler.codec.oneone.OneToOneDecoder;
+import org.jboss.netty.handler.codec.oneone.OneToOneEncoder;
 import org.jboss.netty.handler.codec.string.StringDecoder;
 import org.jboss.netty.handler.codec.string.StringEncoder;
 
@@ -22,6 +24,7 @@ public class SimpleNetty3Server {
                 pipeline.addLast("decoder", new StringDecoder());
                 pipeline.addLast("encoder", new StringEncoder());
                 pipeline.addLast("myServerHandler", new MyServerHandler());
+                pipeline.addLast("myOutHandler", new MyOutStreamHandler());
                 return pipeline;
             }
         });
@@ -32,37 +35,33 @@ public class SimpleNetty3Server {
 }
 
 //
-class MyServerHandler extends SimpleChannelHandler {
+class MyServerHandler extends SimpleChannelUpstreamHandler {
 
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
-        System.out.println("messageReceived");
-        String message = (String) e.getMessage();
-        System.out.println(message);
-        super.messageReceived(ctx, e);
+        System.out.println("in===="+Thread.currentThread().getId());
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ctx.getChannel().write("111");
+                System.out.println("sub thread===="+Thread.currentThread().getId());
+            }
+        }).start();
     }
 
+
+//    @Override
+//    public void handleUpstream(ChannelHandlerContext ctx, ChannelEvent e) throws Exception {
+//        super.handleUpstream(ctx, e);
+//        ctx.getChannel().write("write");
+//        System.out.println("in ==="+Thread.currentThread().getId());
+//    }
+}
+class MyOutStreamHandler extends SimpleChannelDownstreamHandler{
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception {
-        System.out.println("exceptionCaught");
-        super.exceptionCaught(ctx, e);
+    public void handleDownstream(ChannelHandlerContext ctx, ChannelEvent e) throws Exception {
+        System.out.println("out===="+Thread.currentThread().getId());
+        super.handleDownstream(ctx, e);
     }
 
-    @Override
-    public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
-        System.out.println("channelConnected");
-        super.channelConnected(ctx, e);
-    }
-
-    @Override
-    public void channelDisconnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
-        System.out.println("channelDisconnected");
-        super.channelDisconnected(ctx, e);
-    }
-
-    @Override
-    public void channelClosed(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
-        System.out.println("channelClosed");
-        super.channelClosed(ctx, e);
-    }
 }

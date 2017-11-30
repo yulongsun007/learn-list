@@ -11,7 +11,7 @@ import org.aspectj.lang.annotation.*;
  *
  */
 @Aspect
-public class AOPCase {
+public class AopCase {
 
     @Pointcut("execution(* find*(..))")
     private void aspectjMethod() {
