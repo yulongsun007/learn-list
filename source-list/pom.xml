@@ -14,7 +14,7 @@
     <description>此目录存放源码</description>
 
     <modules>
-        <!--<module>tcc-transaction-v1.1.5</module>-->
+        <module>tcc-transaction-v1.1.5</module>
     </modules>
 
 </project>
