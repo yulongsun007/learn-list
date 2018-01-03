@@ -16,9 +16,9 @@
     <modules>
         <module>demo-all</module>
         <module>demo-dubbo</module>
-        <module>demo-sb</module>
-        <module>demo-sb-dubbo</module>
-        <module>demo-sc</module>
+        <module>demo-springboot</module>
+        <module>demo-springboot-dubbo</module>
+        <module>demo-springcloud</module>
         <module>demo-spring</module>
         <module>demo-jvm</module>
         <module>demo-netty</module>
