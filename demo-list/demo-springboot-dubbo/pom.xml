@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>win.yulongsun</groupId>
-    <artifactId>demo-sb-dubbo</artifactId>
+    <artifactId>demo-springboot-dubbo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
-    <name>demo-sb-dubbo</name>
+    <name>demo-springboot-dubbo</name>
     <description>Demo for Spring Boot With Dubbo</description>
 
     <modules>

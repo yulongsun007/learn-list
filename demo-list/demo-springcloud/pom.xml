@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>win.yulongsun</groupId>
-    <artifactId>demo-sc</artifactId>
+    <artifactId>demo-springcloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
-    <name>demo-sc</name>
+    <name>demo-springcloud</name>
     <description>Demo for Spring Cloud</description>
 
     <modules>
