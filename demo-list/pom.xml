@@ -22,5 +22,6 @@
         <module>demo-spring</module>
         <module>demo-jvm</module>
         <module>demo-netty</module>
+        <module>demo-maven-plugin</module>
     </modules>
 </project>
