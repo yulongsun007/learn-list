@@ -23,5 +23,6 @@
         <module>demo-netty</module>
         <module>demo-maven-plugin</module>
         <module>demo-httpkit</module>
+        <module>demo-zookeeper</module>
     </modules>
 </project>
