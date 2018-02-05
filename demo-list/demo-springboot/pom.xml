@@ -15,5 +15,6 @@
     <modules>
         <module>demo-springboot-helloword</module>
         <module>demo-springboot-dubbo</module>
+        <module>demo-springboot-test</module>
     </modules>
 </project>

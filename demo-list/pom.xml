@@ -22,6 +22,7 @@
         <module>demo-jvm</module>
         <module>demo-netty</module>
         <module>demo-maven-plugin</module>
-        <module>demo-httpkit</module>
+        <module>demo-kit</module>
+        <module>demo-zookeeper</module>
     </modules>
 </project>
