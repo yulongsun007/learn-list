@@ -4,7 +4,7 @@
     <artifactId>demo-sb-dubbo-consumer</artifactId>
     <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo-sb-dubbo-provider</name>
+    <name>demo-sb-dubbo-consumer</name>
 
 
     <parent>

@@ -15,6 +15,9 @@
         <module>../demo-springboot-helloword</module>
         <module>../demo-springboot-dubbo</module>
         <module>../demo-springboot-test</module>
+        <module>../demo-springboot-swagger</module>
+        <module>../demo-springboot-mysql</module>
+        <module>../demo-springboot-outer-tomcat</module>
     </modules>
 
     <!--依赖统一管理-->
