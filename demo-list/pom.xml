@@ -16,7 +16,7 @@
     <modules>
         <module>demo-all</module>
         <module>demo-dubbo</module>
-        <module>demo-springboot</module>
+        <module>demo-springboot/demo-springboot-base</module>
         <module>demo-springcloud</module>
         <module>demo-spring</module>
         <module>demo-jvm</module>
