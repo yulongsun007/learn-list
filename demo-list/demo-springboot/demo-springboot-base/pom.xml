@@ -18,6 +18,7 @@
         <module>../demo-springboot-swagger</module>
         <module>../demo-springboot-mysql</module>
         <module>../demo-springboot-outer-tomcat</module>
+        <module>../demo-springboot-redis</module>
     </modules>
 
     <!--依赖统一管理-->
