@@ -3,12 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>win.yulongsun</groupId>
-    <artifactId>demo-spring</artifactId>
+    <artifactId>demo-spring-base</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+
     <modules>
-        <module>demo-spring-rmi</module>
-        <module>demo-spring-core</module>
+        <module>../demo-spring-rmi</module>
+        <module>../demo-spring-core</module>
     </modules>
 
     <name>demo-spring</name>

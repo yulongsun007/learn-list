@@ -18,11 +18,12 @@
         <module>demo-dubbo</module>
         <module>demo-springboot/demo-springboot-base</module>
         <module>demo-springcloud</module>
-        <module>demo-spring</module>
+        <module>demo-spring/demo-spring-base</module>
         <module>demo-jvm</module>
         <module>demo-netty</module>
         <module>demo-maven-plugin</module>
         <module>demo-kit</module>
         <module>demo-zookeeper</module>
+        <module>demo-java</module>
     </modules>
 </project>
