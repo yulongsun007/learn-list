@@ -6,6 +6,7 @@
         <artifactId>demo-springboot-base</artifactId>
         <groupId>win.yulongsun</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../demo-springboot-base/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,5 +23,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+        </dependency>
+
     </dependencies>
 </project>
