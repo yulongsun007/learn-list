@@ -1,5 +1,5 @@
 tcp:
-  port: 8090
+  port: 6610
 boss:
   thread:
     count: 2
@@ -9,3 +9,4 @@ worker:
 so:
   keepalive:  true
   backlog: 100
+#debug: true
