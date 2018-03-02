@@ -1,4 +1,4 @@
-package win.yulongsun.demo.springboot.netty4;
+package win.yulongsun.demo.springboot.netty4.server;
 
 import java.net.InetSocketAddress;
 

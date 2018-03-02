@@ -3,8 +3,9 @@ package win.yulongsun.demo.springboot.netty4.codec;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
-import io.netty.util.CharsetUtil;
+import win.yulongsun.demo.springboot.netty4.Message;
 
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteOrder;
 
 
@@ -38,22 +39,29 @@ public class MyLengthFieldBasedFrameDecoder extends LengthFieldBasedFrameDecoder
 
     @Override
     protected Object decode(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
+        int    readableLength = in.readableBytes();
+        byte[] dataBytes      = new byte[readableLength];
+        in.readBytes(dataBytes);
+        String message = new String(dataBytes, DEFAULT_CHARSET);
 
-//        int     length   = in.readByte();
-//        System.out.println(length);
-        byte[] lengthByte = new byte[4];
-        in.readBytes(lengthByte);
-        String length = new String(lengthByte, DEFAULT_CHARSET);
-        //
-        byte[] bytes = new byte[in.readableBytes()];
-        in.readBytes(bytes);
-        String gbk = new String(bytes, DEFAULT_CHARSET);
-        return super.decode(ctx, in);
-
+        return new Message(readableLength+"",message);
     }
 
     @Override
     protected long getUnadjustedFrameLength(ByteBuf buf, int offset, int length, ByteOrder order) {
-        return super.getUnadjustedFrameLength(buf, offset, length, order);
+        if (length <= 0) {
+            System.out.println("error length");
+        }
+        //
+        byte[] lengthBytes = new byte[length];
+        buf.readBytes(lengthBytes);
+        //
+        long frameLength = 0L;
+        try {
+            frameLength = Long.parseLong(new String(lengthBytes, DEFAULT_CHARSET));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return frameLength;
     }
 }

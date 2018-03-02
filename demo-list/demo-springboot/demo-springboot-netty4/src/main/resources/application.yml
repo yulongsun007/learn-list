@@ -10,3 +10,7 @@ so:
   keepalive:  true
   backlog: 100
 #debug: true
+spring:
+  devtools:
+    restart:
+      additional-paths: src/main/java

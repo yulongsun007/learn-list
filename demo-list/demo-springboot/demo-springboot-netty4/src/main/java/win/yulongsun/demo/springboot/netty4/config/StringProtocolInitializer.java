@@ -1,4 +1,4 @@
-package win.yulongsun.demo.springboot.netty4;
+package win.yulongsun.demo.springboot.netty4.config;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import win.yulongsun.demo.springboot.netty4.codec.AbsIntegerEncoder;
 import win.yulongsun.demo.springboot.netty4.codec.MessageHandler;
 import win.yulongsun.demo.springboot.netty4.codec.MyLengthFieldBasedFrameDecoder;
+import win.yulongsun.demo.springboot.netty4.codec.MySimpleChannelInboundHandler;
 
 /**
  * Just a dummy protocol mainly to show the ServerBootstrap being initialized.
@@ -42,7 +43,8 @@ public class StringProtocolInitializer extends ChannelInitializer<SocketChannel>
         ChannelPipeline pipeline = ch.pipeline();
 //        pipeline.addLast("decoder", stringDecoder);
 //        pipeline.addLast("log", new LoggingHandler());
-        pipeline.addLast("handler", new MyLengthFieldBasedFrameDecoder(1024*8, 0, 4, -4, 0));
+        pipeline.addLast("decoder", new MyLengthFieldBasedFrameDecoder(1024 * 8, 0, 4, -4, 0));
+        pipeline.addLast("handler", new MySimpleChannelInboundHandler());
 //        pipeline.addLast("encoder", stringEncoder);
     }
 
