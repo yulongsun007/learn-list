@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author Sun.YuLong on 2018/3/9.
  */
-public class ClassLoaderTestCase {
+public class ClassLoaderTest {
 
 
     @Test
