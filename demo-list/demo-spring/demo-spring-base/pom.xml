@@ -10,14 +10,15 @@
     <modules>
         <module>../demo-spring-rmi</module>
         <module>../demo-spring-core</module>
+        <module>../demo-spring-bean</module>
     </modules>
 
-    <name>demo-spring</name>
+    <name>demo-spring-base</name>
     <description>Demo project for spring</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.0.5.RELEASE</spring.version>
+        <spring.version>4.3.5.RELEASE</spring.version>
         <aopalliance.version>1.0</aopalliance.version>
     </properties>
 
