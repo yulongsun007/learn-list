@@ -1,14 +1,18 @@
-package win.yulongsun.demo.spring.core.aop.注解;
+package win.yulongsun.demo.spring.core.aop.anotation;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 /**
  * 注解方式实现AOP
+ *
  * @author Sun.YuLong on 2018/1/2.
  */
 @Aspect
+@Component
 public class AopAnnotationCase {
     @Pointcut("execution(* find*(..))")
     private void aspectjMethod() {
@@ -26,6 +30,8 @@ public class AopAnnotationCase {
 
     @Around("aspectjMethod()")
     public Object aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        proceedingJoinPoint.getArgs();
+
         return proceedingJoinPoint.proceed();
     }
 }

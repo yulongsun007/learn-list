@@ -11,6 +11,7 @@
         <module>../demo-spring-rmi</module>
         <module>../demo-spring-core</module>
         <module>../demo-spring-bean</module>
+        <module>../demo-spring-springmvc</module>
     </modules>
 
     <name>demo-spring-base</name>
