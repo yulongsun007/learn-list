@@ -17,5 +17,6 @@
     <modules>
         <module>app-sb/app-sb-base</module>
         <module>app-ssm/app-ssm-base</module>
+        <module>doc-x/doc-x-build</module>
     </modules>
 </project>
