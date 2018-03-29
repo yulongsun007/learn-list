@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>win.yulongsun</groupId>
-    <artifactId>doc-x-base</artifactId>
+    <artifactId>doc-x-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>doc-x-base</name>
+    <name>doc-x-parent</name>
     <description>项目的基类，用于管理其他项目的公共依赖</description>
 
     <parent>
