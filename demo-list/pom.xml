@@ -14,16 +14,16 @@
     <description>存放案例demo</description>
 
     <modules>
+        <module>demo-springboot/demo-springboot-base</module>
+        <module>demo-spring/demo-spring-base</module>
+        <module>demo-java/demo-java-base</module>
         <module>demo-all</module>
         <module>demo-dubbo</module>
-        <module>demo-springboot/demo-springboot-base</module>
         <module>demo-springcloud</module>
-        <module>demo-spring/demo-spring-base</module>
         <module>demo-jvm</module>
         <module>demo-netty</module>
         <module>demo-maven-plugin</module>
         <module>demo-kit</module>
         <module>demo-zookeeper</module>
-        <module>demo-java</module>
     </modules>
 </project>
