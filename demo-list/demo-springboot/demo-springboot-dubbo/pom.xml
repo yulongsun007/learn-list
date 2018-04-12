@@ -11,6 +11,8 @@
     <modules>
         <module>/demo-springboot-dubbo-consumer</module>
         <module>/demo-springboot-dubbo-provider</module>
+        <module>demo-springboot-dubbo-base</module>
+        <module>demo-springboot-dubbo-api</module>
     </modules>
 
 
