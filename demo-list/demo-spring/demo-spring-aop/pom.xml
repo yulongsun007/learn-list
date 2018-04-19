@@ -7,13 +7,23 @@
         <relativePath>../demo-spring-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>demo-spring-rmi</artifactId>
+    <artifactId>demo-spring-core</artifactId>
     <packaging>war</packaging>
-    <name>demo-spring-rmi</name>
-
+    <name>demo-spring-core</name>
     <build>
-        <finalName>demo-spring-rmi</finalName>
+        <finalName>demo-spring-core</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -66,6 +76,15 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
         </dependency>
     </dependencies>
 </project>
