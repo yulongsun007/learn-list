@@ -24,7 +24,7 @@
         </plugins>
     </build>
 
-    <artifactId>demo-spring-bean</artifactId>
+    <artifactId>demo-spring-di</artifactId>
 
     <dependencies>
         <dependency>
