@@ -6,7 +6,7 @@
         <artifactId>demo-java-base</artifactId>
         <groupId>win.yulongsun</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../demo-java-base/pom.xml</relativePath>
+        <relativePath>../demo-java-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
