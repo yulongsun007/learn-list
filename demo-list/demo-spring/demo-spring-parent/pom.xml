@@ -12,6 +12,7 @@
         <module>../demo-spring-di</module>
         <module>../demo-spring-aop</module>
         <module>../demo-spring-webmvc</module>
+        <module>../demo-spring-util</module>
     </modules>
 
     <name>demo-spring-parent</name>
