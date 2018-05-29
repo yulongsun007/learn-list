@@ -16,10 +16,10 @@
     <modules>
         <module>demo-springboot/demo-springboot-base</module>
         <module>demo-spring/demo-spring-parent</module>
-        <module>demo-java/demo-java-base</module>
+        <module>demo-java/demo-java-parent</module>
+        <module>demo-springcloud/demo-springcloud-parent</module>
         <module>demo-all</module>
         <module>demo-dubbo</module>
-        <module>demo-springcloud</module>
         <module>demo-jvm</module>
         <module>demo-netty</module>
         <module>demo-maven-plugin</module>
