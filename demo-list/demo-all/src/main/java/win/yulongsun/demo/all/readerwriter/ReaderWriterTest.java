@@ -15,10 +15,25 @@ public class ReaderWriterTest implements Reader, Writer {
 
     @Override
     public void read(String fileNamePath) {
-        System.out.println("读者begin");
-        System.out.println("读者-" + Thread.currentThread().getId() + "-content=" + readFile(fileNamePath));
-        System.out.println("读者end");
-        System.out.println("-------------------------------");
+//        System.out.println("读者begin");
+//        System.out.println("读者-" + Thread.currentThread().getId() + "-content=" + readFile(fileNamePath));
+//        System.out.println("读者end");
+//        System.out.println("-------------------------------");
+        //以上读取方法不能保证数据一致性，因为当文件锁的时候，还读取文件内容
+        try {
+            System.out.println("读者begin-" + Thread.currentThread().getId());
+            RandomAccessFile file = new RandomAccessFile(new File(fileNamePath), "r");
+            String           line = file.readLine();
+            System.out.println("读者-" + Thread.currentThread().getId() + "-content=" + line);
+            System.out.println("读者end-" + Thread.currentThread().getId());
+            System.out.println("-------------------------------");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+//            e.printStackTrace();
+            System.out.println("重试-" + Thread.currentThread().getId());
+            read(fileNamePath);
+        }
 
     }
 
@@ -27,10 +42,11 @@ public class ReaderWriterTest implements Reader, Writer {
         try {
             RandomAccessFile file     = new RandomAccessFile(new File(fileNamePath), "rw");
             FileLock         fileLock = file.getChannel().tryLock();
-            System.out.println("写者begin");
-            file.writeUTF("write");
+            System.out.println("写者begin-" + Thread.currentThread().getId());
+            file.seek(file.length());
+            file.write("write\t".getBytes());
             System.out.println("写者-" + Thread.currentThread().getId() + "-write");
-            System.out.println("写者end");
+            System.out.println("写者end-" + Thread.currentThread().getId());
             System.out.println("-------------------------------");
             fileLock.release();
             file.close();
@@ -53,14 +69,14 @@ public class ReaderWriterTest implements Reader, Writer {
             public void run() {
                 readerWriterTest.write(fileNamePath);
             }
-        }, 0L, 5L, TimeUnit.SECONDS);
+        }, 0L, 1L, TimeUnit.SECONDS);
         //读者
         Executors.newScheduledThreadPool(10).scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
                 readerWriterTest.read(fileNamePath);
             }
-        }, 0L, 100L, TimeUnit.MILLISECONDS);
+        }, 0L, 10L, TimeUnit.MILLISECONDS);
     }
 
 
