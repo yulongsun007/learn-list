@@ -143,7 +143,7 @@ public class UnSafeTest {
 
     class CasCounter implements Counter {
 
-        private Long counter = 0L;
+        private volatile long counter = 0;
 
         private Unsafe unsafe;
 
@@ -156,6 +156,7 @@ public class UnSafeTest {
 
         public void increment() {
             long current = counter;
+            //如果内存值和预期值相等，写入数据；如果不想等，不操作，返回旧数据
             while (!unsafe.compareAndSwapLong(this, offset, current, current + 1)) {
                 current = counter;
             }
@@ -187,6 +188,9 @@ public class UnSafeTest {
          *  result is 10000000
          *  time is 511
          *
+         *CasCounter:
+         *  result is 10000000
+         *  time is 714
          */
         long            start           = System.currentTimeMillis();
         Counter         counter         = new CasCounter();
@@ -202,5 +206,66 @@ public class UnSafeTest {
 
     }
 
+    //------------------------------------------------------------------------
+    // 4. allocateInstance 不调用构造方法生成实例
+    //------------------------------------------------------------------------
 
+    class Person {
+        private String name;
+        private int    age;
+
+        public Person() {
+            this.name = "test";
+            this.age = 20;
+        }
+
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "name='" + name + '\'' +
+                    ", age=" + age +
+                    '}';
+        }
+    }
+
+    //allocateInstance会在未调用构造方法的情况下生成对象。
+    @Test
+    public void testAllocateInstance() {
+        Unsafe unsafe = getUnsafe();
+        try {
+            Person instance = (Person) unsafe.allocateInstance(Person.class);
+            System.out.println(instance); //Person{name='null', age=0}
+            //
+            Person person = new Person();
+            System.out.println(person); //Person{name='test', age=20}
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //------------------------------------------------------------------------
+    // 5.objectFieldOffset 获取成员变量在内存中的地址相对于对象地址的【偏移量】
+    //------------------------------------------------------------------------
+    @Test
+    public void testObjectFieldOffset() throws NoSuchFieldException {
+        Unsafe unsafe = getUnsafe();
+        long   name   = unsafe.objectFieldOffset(Person.class.getDeclaredField("name"));
+        System.out.println("name::" + name);//name::16
+        //
+        long age = unsafe.objectFieldOffset(Person.class.getDeclaredField("age"));
+        System.out.println("age::" + age);//age::12
+    }
+
+    //------------------------------------------------------------------------
+    // 6. 直接修改内存数据，可以越过访问权限
+    //------------------------------------------------------------------------
+    @Test
+    public void testPutXXX() throws NoSuchFieldException {
+        Unsafe unsafe = getUnsafe();
+        //
+        Person person = new Person();
+        unsafe.putObject(person, unsafe.objectFieldOffset(Person.class.getDeclaredField("name")), "zhangsan");
+        unsafe.putInt(person, unsafe.objectFieldOffset(Person.class.getDeclaredField("age")), 30);
+        System.out.println(person);//Person{name='zhangsan', age=30}
+    }
 }
