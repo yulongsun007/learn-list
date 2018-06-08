@@ -3,7 +3,7 @@ package win.yulongsun.demo.jvm.basic.command;
 /**
  * @author Sun.YuLong on 2018/6/1.
  */
-public class JMapCommandTestCase {
+public class JmapCommandTestCase {
 
     //------------------------------------------------------------------------
     // jmap -heap pid

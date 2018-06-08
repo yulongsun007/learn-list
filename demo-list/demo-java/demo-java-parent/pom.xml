@@ -12,6 +12,7 @@
     <modules>
         <module>../demo-java-basic</module>
         <module>../demo-java-juc</module>
+        <module>../demo-java-jdk8</module>
     </modules>
 
     <name>demo-java-parent</name>
