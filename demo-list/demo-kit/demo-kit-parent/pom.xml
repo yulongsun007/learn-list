@@ -15,6 +15,7 @@
         <module>../demo-httpkit</module>
         <module>../demo-rxjava</module>
         <module>../demo-guava</module>
+        <module>../demo-hystrix</module>
     </modules>
 
     <dependencyManagement>
