@@ -1,6 +1,9 @@
 package win.yulongsun.demo.java.juc.concurrent.locks;
 
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -9,6 +12,18 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  */
 public class ReadWriteLockTest {
 
+    @Test
+    public void testPutAndGet() {
+        Cache.put("name", "zhangsan");
+        Assert.assertEquals("zhangsan", Cache.get("name"));
+    }
+
+    @Test
+    public void testClear() {
+        Cache.put("name", "zhangsan");
+        Cache.clear();
+        Assert.assertNull(Cache.get("name"));
+    }
 
 }
 
@@ -42,6 +57,5 @@ class Cache {
             readWriteLock.readLock().unlock();
         }
     }
-
 
 }
