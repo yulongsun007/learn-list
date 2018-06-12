@@ -6,10 +6,13 @@
 
     <groupId>win.yulongsun</groupId>
     <artifactId>demo-springcloud-parent</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
     <modules>
         <module>../demo-springcloud-template</module>
+        <module>../demo-springcloud-config</module>
+        <module>../demo-springcloud-zuul</module>
         <!--<module>../microservice-discovery-eureka</module>-->
         <!--<module>../microservice-discovery-eureka-ha</module>-->
         <!--<module>../microservice-pro-user-movie</module>-->
