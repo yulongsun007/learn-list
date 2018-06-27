@@ -1,4 +1,4 @@
-package win.yulongsun.demo.spring.di.profile;
+package win.yulongsun.demo.spring.di.annotation.profile;
 
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
