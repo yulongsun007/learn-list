@@ -8,4 +8,11 @@
 
     <bean name="bean2" class="win.yulongsun.demo.spring.di.bean.Bean" scope="prototype"/>
 
+    <!--静态方法创建Bean-->
+    <bean id="beanStaticFactory" class="win.yulongsun.demo.spring.di.bean.BeanStaticFactory"
+          factory-method="getMyBean"/>
+
+    <!--实例方法创建Bean-->
+    <bean id="beanCommonMethodFactory" class="win.yulongsun.demo.spring.di.bean.BeanCommonMethodFactory"/>
+    <bean id="beanCommon" factory-bean="beanCommonMethodFactory" factory-method="getMyBean"/>
 </beans>

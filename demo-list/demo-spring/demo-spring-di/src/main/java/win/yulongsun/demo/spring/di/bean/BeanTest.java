@@ -46,4 +46,24 @@ public class BeanTest {
     }
 
 
+
+    /**
+     * 创建bean的三种方式:
+     * 1. 普通构造方法
+     * 2. 静态工厂方法    <bean name="beanStaticFactory" class="win.yulongsun.demo.spring.di.bean.BeanStaticFactory" factory-method="getMyBean"/>
+     * 3. 普通实例方法
+     *     <bean name="beanCommonMethodFactory" class="win.yulongsun.demo.spring.di.bean.BeanCommonMethodFactory"/>
+     *     <bean id="beanCommon" factory-bean="beanCommonMethodFactory" factory-method="getMyBean"/>
+     */
+    @Test
+    public void testCreateBeanByStaticFactory() {
+        System.out.println(context.getBean("myBeanFactory"));
+    }
+
+    @Test
+    public void testCreateBeanByCommonMethod(){
+        System.out.println(context.getBean("beanCommon"));
+    }
+
+
 }
