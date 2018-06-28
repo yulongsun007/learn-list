@@ -4,11 +4,11 @@
 
     <springProfile name="dev,test">
         <logger name="org.springframework.web" level="INFO"/>
-        <logger name="win.yulongsun.demo.springboot.log" level="DEBUG"/>
+        <logger name="win.yulongsun" level="DEBUG"/>
     </springProfile>
 
     <springProfile name="prod">
         <logger name="org.springframework.web" level="ERROR"/>
-        <logger name="win.yulongsun.demo.springboot.log" level="TRACE"/>
+        <logger name="win.yulongsun" level="TRACE"/>
     </springProfile>
 </configuration>
