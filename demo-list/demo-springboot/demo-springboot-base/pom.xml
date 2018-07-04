@@ -17,16 +17,14 @@
         <module>../demo-springboot-test</module>
         <module>../demo-springboot-swagger</module>
         <module>../demo-springboot-mysql</module>
-        <module>../demo-springboot-outer-tomcat</module>
         <module>../demo-springboot-redis</module>
         <module>../demo-springboot-mongodb</module>
         <module>../demo-springboot-mybatis</module>
         <module>../demo-springboot-quartz</module>
         <module>../demo-springboot-rabbitmq</module>
         <module>../demo-springboot-netty4</module>
-        <module>../demo-springboot-security-oauth2</module>
+        <module>../demo-springboot-security/demo-springboot-security-parent</module>
         <module>../demo-springboot-fastdfs</module>
-        <module>../demo-springboot-log</module>
         <module>../demo-springboot-common</module>
     </modules>
 
