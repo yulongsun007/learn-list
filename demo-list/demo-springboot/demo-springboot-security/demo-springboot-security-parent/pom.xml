@@ -17,9 +17,21 @@
         <module>../demo-springboot-security-server</module>
     </modules>
 
+    <!--依赖统一管理-->
+    <!--<dependencyManagement>-->
+        <!--<dependencies>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot</artifactId>-->
+                <!--<version>${springboot.version}</version>-->
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            <!--</dependency>-->
 
-    <dependencyManagement>
-
-    </dependencyManagement>
+        <!--</dependencies>-->
+    <!--</dependencyManagement>-->
+    <properties>
+        <springboot.version>1.5.9.RELEASE</springboot.version>
+    </properties>
 
 </project>
