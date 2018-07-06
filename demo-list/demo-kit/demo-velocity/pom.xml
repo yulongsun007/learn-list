@@ -6,20 +6,20 @@
         <artifactId>demo-kit-parent</artifactId>
         <groupId>win.yulongsun</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../demo-kit-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>demo-httpkit</artifactId>
-    <packaging>jar</packaging>
-    <name>demo-httpkit</name>
+
+    <artifactId>demo-velocity</artifactId>
+
 
     <dependencies>
+        <!--velocity.properties-dep -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.0</version>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>demo-httpkit</finalName>
-    </build>
+
 </project>

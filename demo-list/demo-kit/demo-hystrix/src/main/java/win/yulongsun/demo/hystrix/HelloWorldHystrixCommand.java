@@ -7,7 +7,7 @@ import com.netflix.hystrix.*;
  */
 public class HelloWorldHystrixCommand extends HystrixCommand<String> {
 
-    protected HelloWorldHystrixCommand() {
+    HelloWorldHystrixCommand() {
         super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("helloWordGroup"))
         );
     }
