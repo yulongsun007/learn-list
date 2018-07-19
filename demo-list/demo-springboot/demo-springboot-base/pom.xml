@@ -26,6 +26,8 @@
         <module>../demo-springboot-security/demo-springboot-security-parent</module>
         <module>../demo-springboot-fastdfs</module>
         <module>../demo-springboot-common</module>
+        <module>../demo-springboot-shiro</module>
+        <module>../demo-springboot-feature</module>
     </modules>
 
     <!--依赖统一管理-->
