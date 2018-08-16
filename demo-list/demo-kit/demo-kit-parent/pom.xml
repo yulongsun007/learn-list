@@ -15,6 +15,7 @@
         <module>../demo-guava</module>
         <module>../demo-hystrix</module>
         <module>../demo-velocity</module>
+        <module>../demo-rabbitmq</module>
     </modules>
 
     <dependencyManagement>
