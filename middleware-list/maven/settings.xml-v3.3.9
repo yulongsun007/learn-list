@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <localRepository>/Volumes/Extension/repos</localRepository>
+
+    <activeProfiles>
+        <activeProfile>mirror-all</activeProfile>
+    </activeProfiles>
+
+    <servers>
+        <server>
+            <id>mirror-all</id>
+            <username>*</username>
+            <password>*</password>
+        </server>
+    </servers>
+
+    <mirrors>
+
+        <mirror>
+            <id>mirror-all</id>
+            <mirrorOf>central</mirrorOf>
+            <url>http://mvn.cloud.alipay.com/nexus/content/groups/public</url>
+        </mirror>
+
+        <!--<mirror>-->
+            <!--<id>nexus-aliyun</id>-->
+            <!--<mirrorOf>*</mirrorOf>-->
+            <!--<name>Nexus aliyun</name>-->
+            <!--<url>http://maven.aliyun.com/nexus/content/groups/public</url>-->
+        <!--</mirror>-->
+    </mirrors>
+
+    <profiles>
+        <profile>
+            <id>mirror-all</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>nexus-server@public</id>
+                    <url>http://mvn.cloud.alipay.com/nexus/content/repositories/releases
+                    </url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>nexus-server@public-snapshots</id>
+                    <url>http://mvn.cloud.alipay.com/nexus/content/repositories/snapshots
+                    </url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>nexus-server@public</id>
+                    <url>http://mvn.cloud.alipay.com/nexus/content/repositories/releases
+                    </url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+</settings>
