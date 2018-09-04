@@ -12,12 +12,16 @@
 
     <artifactId>demo-mybatis</artifactId>
 
+    <properties>
+        <mybatis.generator.version>1.3.2</mybatis.generator.version>
+        <mybatis.version>3.4.4</mybatis.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>3.4.4</version>
+            <version>${mybatis.version}</version>
         </dependency>
 
         <dependency>
@@ -26,16 +30,16 @@
             <version>5.1.42</version>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
         <!--mybatis自动生成代码配置-->
         <dependency>
             <groupId>org.mybatis.generator</groupId>
             <artifactId>mybatis-generator-core</artifactId>
-            <version>1.3.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <version>${mybatis.generator.version}</version>
         </dependency>
 
     </dependencies>
@@ -46,12 +50,13 @@
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.2</version>
+                <version>${mybatis.generator.version}</version>
                 <configuration>
                     <!--指定配置文件路径-->
                     <configurationFile>
-                        src/main/resources/generatorConfig.xml
+                        src/main/resources/generator/generatorConfig.xml
                     </configurationFile>
+                    <overwrite>true</overwrite>
                 </configuration>
             </plugin>
         </plugins>

@@ -1,22 +1,24 @@
-package win.yulongsun.demo.mybatis.dto;
+package win.yulongsun.demo.mybatis.model;
 
 import java.io.Serializable;
 
-public class UserDto implements Serializable {
-    private String uid;
+public class UserPo implements Serializable {
+    private Integer uid;
 
     private String username;
 
     private String password;
 
+    private Integer age;
+
     private static final long serialVersionUID = 1L;
 
-    public String getUid() {
+    public Integer getUid() {
         return uid;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid == null ? null : uid.trim();
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public String getUsername() {
@@ -35,6 +37,14 @@ public class UserDto implements Serializable {
         this.password = password == null ? null : password.trim();
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -44,6 +54,7 @@ public class UserDto implements Serializable {
         sb.append(", uid=").append(uid);
         sb.append(", username=").append(username);
         sb.append(", password=").append(password);
+        sb.append(", age=").append(age);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

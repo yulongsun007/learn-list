@@ -4,15 +4,14 @@
 <generatorConfiguration>
 
     <!--指定配置文件-->
-    <properties resource="generatorConfig.properties"/>
+    <properties resource="generator/generatorConfig.properties"/>
 
     <!--指定驱动位置-->
-    <classPathEntry
-            location="/Users/sunyulong/Documents/Project/02Java/02Practice/learn-list/demo-list/demo-kit/demo-mybatis/src/main/resources/lib/mysql-connector-java-5.1.20-bin.jar"/>
+    <classPathEntry location="D://mysql-connector-java-5.1.20-bin.jar"/>
     <!--<classPathEntry location="${projectName}/src/main/resources/${jdbc.connector}"/>-->
 
     <!--配置数据源和生成代码位置-->
-    <context id="mybatis_model" targetRuntime="MyBatis3"
+    <context id="mysql" targetRuntime="MyBatis3"
              defaultModelType="flat">
         <!--设置生成的Java文件的编码格式-->
         <property name="javaFileEncoding" value="UTF-8"/>
@@ -31,27 +30,32 @@
         </commentGenerator>
         <!--数据库配置-->
         <jdbcConnection driverClass="${jdbc.driverClass}"
-                        connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}">
-        </jdbcConnection>
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.username}"
+                        password="${jdbc.password}"/>
+        <!--oracle配置-->
+        <!--<jdbcConnection driverClass="oracle.jdbc.OracleDriver"-->
+                        <!--connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:test"-->
+                        <!--userId=""-->
+                        <!--password=""/>-->
         <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!-- 生成实体类地址 -->
-        <javaModelGenerator targetPackage="${targetPackage}.dto" targetProject="${projectName}/src/main/java">
+        <javaModelGenerator targetPackage="${targetPackage}.model" targetProject=".\src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- 生成mapxml文件 -->
-        <sqlMapGenerator targetPackage="mybatis.auto" targetProject="${projectName}/src/main/resources"/>
+        <sqlMapGenerator targetPackage="mybatis.auto" targetProject=".\src/main/resources"/>
         <!-- 生成mapxml对应client，也就是接口dao -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="${targetPackage}.dao.mapper"
-                             targetProject="${projectName}/src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${targetPackage}.dao.mapper" targetProject=".\src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!-- 表映射 配置表信息 -->
-        <table tableName="t_user" domainObjectName="UserDto"
+        <table tableName="t_user" domainObjectName="UserPo"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
