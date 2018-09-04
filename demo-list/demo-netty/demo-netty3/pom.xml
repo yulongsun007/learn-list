@@ -9,8 +9,6 @@
     <artifactId>demo-netty3</artifactId>
     <packaging>jar</packaging>
 
-    <name>demo-netty3 Maven Webapp</name>
-    <url>http://maven.apache.org</url>
 
     <dependencies>
         <dependency>
@@ -19,7 +17,4 @@
             <version>3.10.1.Final</version>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>demo-netty3</finalName>
-    </build>
 </project>
