@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <!--指定配置文件-->
+    <properties resource="generatorConfig.properties"/>
+
+    <!--指定驱动位置-->
+    <classPathEntry
+            location="/Users/sunyulong/Documents/Project/02Java/02Practice/learn-list/demo-list/demo-kit/demo-mybatis/src/main/resources/lib/mysql-connector-java-5.1.20-bin.jar"/>
+    <!--<classPathEntry location="${projectName}/src/main/resources/${jdbc.connector}"/>-->
+
+    <!--配置数据源和生成代码位置-->
+    <context id="mybatis_model" targetRuntime="MyBatis3"
+             defaultModelType="flat">
+        <!--设置生成的Java文件的编码格式-->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!--格式化Java代码-->
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+        <!--格式化XML代码-->
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+        <!--JavaBean 实现序列化接口-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!--JavaBean生成toString()-->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <commentGenerator>
+            <!--生成的代码时是否生成注释:true不生成 false生成-->
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <!--数据库配置-->
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}">
+        </jdbcConnection>
+        <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 生成实体类地址 -->
+        <javaModelGenerator targetPackage="${targetPackage}.dto" targetProject="${projectName}/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成mapxml文件 -->
+        <sqlMapGenerator targetPackage="mybatis.auto" targetProject="${projectName}/src/main/resources"/>
+        <!-- 生成mapxml对应client，也就是接口dao -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${targetPackage}.dao.mapper"
+                             targetProject="${projectName}/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 表映射 配置表信息 -->
+        <table tableName="t_user" domainObjectName="UserDto"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+    </context>
+
+</generatorConfiguration>

@@ -12,8 +12,8 @@ import java.util.concurrent.TimeoutException;
  */
 public class RabbitProducer {
 
-    private static final String IP = "10.20.29.103";
-    private static final int PORT = 5672;
+    private static final String IP   = "10.20.29.103";
+    private static final int    PORT = 5672;
 
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
@@ -21,9 +21,19 @@ public class RabbitProducer {
         factory.setPort(PORT);
         factory.setUsername("guest");
         factory.setPassword("123456");
-        //
+        // 创建连接
         Connection connection = factory.newConnection();
-        Channel    channel    = connection.createChannel();
-//        channel.exchangeDe
+        // 创建信道
+        Channel channel = connection.createChannel();
+        // 创建交换器
+        channel.exchangeDeclare("exchange-name", "direct", true, false, null);
+        // 创建队列
+        channel.queueDeclare("queue-name", true, false, false, null);
+        // 将交换器和队列通过路由键绑定
+        channel.queueBind("queue-name", "exchange-name", "routingkey-name");
+        //
+//        channel.basicPublish();
+
+
     }
 }

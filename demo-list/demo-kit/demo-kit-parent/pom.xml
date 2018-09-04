@@ -16,6 +16,8 @@
         <module>../demo-hystrix</module>
         <module>../demo-velocity</module>
         <module>../demo-rabbitmq</module>
+        <module>../demo-zookeeper</module>
+        <module>../demo-mybatis</module>
     </modules>
 
     <dependencyManagement>
