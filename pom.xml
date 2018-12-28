@@ -11,10 +11,9 @@
 
 
     <modules>
-        <module>app-list</module>
-        <module>basic-list</module>
+        <!--<module>app-list</module>-->
         <module>demo-list</module>
-        <module>source-list</module>
+        <!--<module>source-list</module>-->
     </modules>
 
 </project>
