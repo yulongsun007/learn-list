@@ -1,4 +1,4 @@
-package win.yulongsun.demo.jvm.basic.command;
+package win.yulongsun.demo.jvm.command;
 
 /**
  * @author Sun.YuLong on 2018/6/1.

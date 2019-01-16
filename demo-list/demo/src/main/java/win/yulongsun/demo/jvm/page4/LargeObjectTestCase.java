@@ -1,4 +1,4 @@
-package win.yulongsun.demo.jvm.basic.page4;
+package win.yulongsun.demo.jvm.page4;
 
 /**大对象直接进入老年代
  * 前提：新生代使用ParNewGC. 使用PS无效
