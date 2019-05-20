@@ -5,5 +5,5 @@ package win.yulongsun.demo.spring.core.aop;
  */
 public interface UserManager {
 
-    public String findUserById(Integer userId);
+    String findUserById(Integer userId);
 }
