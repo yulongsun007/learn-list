@@ -1,6 +1,6 @@
-package win.yulongsun.demo.mybatis.dao.mapper;
+package win.yulongsun.demo.db.mybatis.dao.mapper;
 
-import win.yulongsun.demo.mybatis.model.UserPo;
+import win.yulongsun.demo.db.mybatis.model.UserPo;
 
 public interface UserPoMapper {
     int deleteByPrimaryKey(Integer uid);

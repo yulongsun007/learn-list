@@ -1,4 +1,4 @@
-package win.yulongsun.demo.mybatis.model;
+package win.yulongsun.demo.db.mybatis.model;
 
 import java.io.Serializable;
 
