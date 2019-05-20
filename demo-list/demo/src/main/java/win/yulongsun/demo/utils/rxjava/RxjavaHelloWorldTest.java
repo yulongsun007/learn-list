@@ -1,4 +1,4 @@
-package win.yulongsun.demo.rxjava;
+package win.yulongsun.demo.utils.rxjava;
 
 import org.junit.Test;
 import rx.Observable;
