@@ -1,4 +1,4 @@
-package win.yulongsun.demo.guava.utilites;
+package win.yulongsun.demo.utils.guava;
 
 import com.google.common.base.Joiner;
 import org.junit.Test;

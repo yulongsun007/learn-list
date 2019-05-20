@@ -1,4 +1,4 @@
-package win.yulongsun.demo.java.guava.basic;
+package win.yulongsun.demo.utils.guava;
 
 import com.google.common.base.Optional;
 import org.junit.Test;

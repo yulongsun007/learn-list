@@ -1,4 +1,4 @@
-package win.yulongsun.demo.java.guava.cache;
+package win.yulongsun.demo.utils.guava;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
