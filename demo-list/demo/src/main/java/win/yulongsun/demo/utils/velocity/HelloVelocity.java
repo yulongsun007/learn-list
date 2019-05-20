@@ -1,4 +1,4 @@
-package win.yulongsun.demo.velocity;
+package win.yulongsun.demo.utils.velocity;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
