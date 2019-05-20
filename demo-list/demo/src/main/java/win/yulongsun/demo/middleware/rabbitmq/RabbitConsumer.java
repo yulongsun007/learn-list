@@ -1,4 +1,4 @@
-package win.yulongsun.demo.rabbitmq;
+package win.yulongsun.demo.middleware.rabbitmq;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
