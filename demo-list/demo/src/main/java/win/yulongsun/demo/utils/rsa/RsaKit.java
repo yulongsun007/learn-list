@@ -1,4 +1,4 @@
-package win.yulongsun.demo.rsa;
+package win.yulongsun.demo.utils.rsa;
 
 
 import com.sun.xml.internal.messaging.saaj.util.Base64;
