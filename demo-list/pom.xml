@@ -14,13 +14,8 @@
     <description>存放案例demo</description>
 
     <modules>
-        <module>demo-springboot/demo-springboot-base</module>
-        <module>demo-spring/demo-spring-parent</module>
         <module>demo-springcloud/demo-springcloud-parent</module>
         <module>demo</module>
         <module>demo-dubbo</module>
-        <module>demo-netty</module>
-        <module>demo-maven-plugin</module>
-        <module>demo-kit/demo-kit-parent</module>
     </modules>
 </project>
