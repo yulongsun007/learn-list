@@ -11,9 +11,9 @@ public class OrderPrintTestCase1 {
 
     public static void main(String[] args) {
         OrderPrintTestCase1 testCase1 = new OrderPrintTestCase1();
-        Thread a = new Thread(()-> {testCase1.print(0);},"A");
-        Thread b = new Thread(()-> {testCase1.print(1);},"B");
-        Thread c = new Thread(()-> {testCase1.print(2);},"C");
+        Thread a = new Thread(()-> {testCase1.print2(0);},"A");
+        Thread b = new Thread(()-> {testCase1.print2(1);},"B");
+        Thread c = new Thread(()-> {testCase1.print2(2);},"C");
         a.start();
         b.start();
         c.start();
@@ -36,6 +36,30 @@ public class OrderPrintTestCase1 {
                 }
             } finally {
                 lock.unlock();
+            }
+        }
+    }
+
+    /**
+     * 使用wait notify实现
+     * @param threadIndex
+     */
+    private void print2(int threadIndex) {
+        for (int i = 0; i < loop; ) {
+            synchronized (this) {
+                if (indexCount % mod == threadIndex) {
+                    System.out.println(Thread.currentThread().getName());
+                    indexCount++;
+                    i++;
+                    //
+                    notifyAll();
+                } else {
+                    try {
+                        wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
     }
