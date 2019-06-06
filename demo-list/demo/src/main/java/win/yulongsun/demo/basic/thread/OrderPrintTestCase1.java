@@ -11,9 +11,9 @@ public class OrderPrintTestCase1 {
 
     public static void main(String[] args) {
         OrderPrintTestCase1 testCase1 = new OrderPrintTestCase1();
-        Thread a = new Thread(()-> {testCase1.print2(0);},"A");
-        Thread b = new Thread(()-> {testCase1.print2(1);},"B");
-        Thread c = new Thread(()-> {testCase1.print2(2);},"C");
+        Thread a = new Thread(()-> {testCase1.print3(0);},"A");
+        Thread b = new Thread(()-> {testCase1.print3(1);},"B");
+        Thread c = new Thread(()-> {testCase1.print3(2);},"C");
         a.start();
         b.start();
         c.start();
@@ -22,7 +22,7 @@ public class OrderPrintTestCase1 {
 
     private int indexCount = 0;
     private int mod = 3;
-    private int loop = 10;
+    private int loop = 25;
     private static ReentrantLock lock = new ReentrantLock(true);
 
     private void print(int threadIndex) {
@@ -51,6 +51,35 @@ public class OrderPrintTestCase1 {
                     System.out.println(Thread.currentThread().getName());
                     indexCount++;
                     i++;
+                    //
+                    notifyAll();
+                } else {
+                    try {
+                        wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
+
+    private int printNum = 1;
+
+    /**
+     * 使用wait notify实现
+     *
+     * @param threadIndex
+     */
+    private void print3(int threadIndex) {
+        for (int i = 0; i < loop; ) {
+            synchronized (this) {
+                if (indexCount % mod == threadIndex) {
+                    for (int j = 0; j < 5; j++) {
+                        System.out.println(Thread.currentThread().getName() + "-" + printNum++);
+                        indexCount++;
+                        i++;
+                    }
                     //
                     notifyAll();
                 } else {
