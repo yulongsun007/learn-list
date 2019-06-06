@@ -77,9 +77,9 @@ public class OrderPrintTestCase1 {
                 if (indexCount % mod == threadIndex) {
                     for (int j = 0; j < 5; j++) {
                         System.out.println(Thread.currentThread().getName() + "-" + printNum++);
-                        indexCount++;
                         i++;
                     }
+                    indexCount++; //注意
                     //
                     notifyAll();
                 } else {
