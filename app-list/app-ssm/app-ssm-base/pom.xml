@@ -45,7 +45,7 @@
         <aspectj.version>1.6.12</aspectj.version>
         <aopalliance.version>1.0</aopalliance.version>
         <druid.version>1.0.7</druid.version>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.13.1</junit.version>
         <log4j.version>1.2.16</log4j.version>
         <cglib.version>2.2</cglib.version>
         <dozer.version>5.4.0</dozer.version>
