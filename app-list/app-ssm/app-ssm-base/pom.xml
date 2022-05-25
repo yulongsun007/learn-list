@@ -36,7 +36,7 @@
     <properties>
         <maven.test.skip>true</maven.test.skip>
 
-        <spring.version>4.0.5.RELEASE</spring.version>
+        <spring.version>5.2.22.RELEASE</spring.version>
         <mybatis.version>3.2.4</mybatis.version>
         <mybatisspring.version>1.2.2</mybatisspring.version>
         <mysql.version>5.1.25</mysql.version>
