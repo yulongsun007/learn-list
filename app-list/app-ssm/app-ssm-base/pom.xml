@@ -39,7 +39,7 @@
         <spring.version>4.0.5.RELEASE</spring.version>
         <mybatis.version>3.2.4</mybatis.version>
         <mybatisspring.version>1.2.2</mybatisspring.version>
-        <mysql.version>5.1.25</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <netty.version>4.0.21.Final</netty.version>
         <servlet.version>2.5</servlet.version>
         <aspectj.version>1.6.12</aspectj.version>
