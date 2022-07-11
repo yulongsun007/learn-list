@@ -80,7 +80,7 @@
     </dependencyManagement>
 
     <properties>
-        <springboot.version>1.5.9.RELEASE</springboot.version>
+        <springboot.version>2.2.11.RELEASE</springboot.version>
         <swagger.version>2.2.2</swagger.version>
         <dubbo.version>1.0.0</dubbo.version>
         <netty.version>4.1.22.Final</netty.version>
